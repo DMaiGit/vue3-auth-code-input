@@ -1,6 +1,6 @@
 {
   "name": "vue3-auth-code-input",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

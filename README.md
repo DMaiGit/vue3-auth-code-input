@@ -1,4 +1,4 @@
-# vue3-verification-code-input
+# vue3-auth-code-input
 
 这是一个基于 Vue 3 和 TypeScript 开发的验证码输入组件，适用于需要用户输入验证码的场景。它提供了灵活的配置选项，以适应不同的需求。
 
@@ -13,11 +13,11 @@
 - 支持自定义类名。
 - 支持自定义插槽。
 
-![line](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/image/sms-code-line.gif)
+![line](https://raw.githubusercontent.com/DMaiGit/vue3-auth-code-input/main/public/image/sms-code-line.gif)
 
-![card](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/image/sms-code-card.gif)
+![card](https://raw.githubusercontent.com/DMaiGit/vue3-auth-code-input/main/public/image/sms-code-card.gif)
 
-![demo](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/image/demo.gif)
+![demo](https://raw.githubusercontent.com/DMaiGit/vue3-auth-code-input/main/public/image/demo.gif)
 
 ## Props 属性说明
 
@@ -65,5 +65,5 @@
 ## 安装使用
 
 ```bash
-npm install vue3-verification-code-input
+npm install vue3-auth-code-input
 ```

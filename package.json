@@ -1,0 +1,47 @@
+{
+  "name": "vue3-verification-code-input",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "unpkg": "./dist/index.umd.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "vue3",
+    "code",
+    "input",
+    "vue3-input",
+    "vue3-verification",
+    "vue3-code",
+    "vue3-input-verification",
+    "vue3-input-code"
+  ],
+  "author": "Maiz <scxiaoxu0909@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build --config ./vite.build.config.ts",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build && standard-version"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.4",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "less": "^4.2.0",
+    "sass": "^1.74.1",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.0",
+    "vite-plugin-dts": "^3.8.1",
+    "vue-tsc": "^2.0.6"
+  }
+}

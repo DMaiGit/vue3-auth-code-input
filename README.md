@@ -13,9 +13,11 @@
 - 支持自定义类名。
 - 支持自定义插槽。
 
-![line]('./public/image/sms-code-line.gif')
-![card]('./public/image/sms-code-card.gif')
-![demo]('./public/PixPin_2024-04-05_22-35-07.gif')
+![line]('https://github.com/DMaiGit/vue3-verification-code-input/blob/main/public/image/sms-code-line.gif')
+
+![card]('https://github.com/DMaiGit/vue3-verification-code-input/blob/main/public/image/sms-code-card.gif')
+
+![demo]('https://github.com/DMaiGit/vue3-verification-code-input/blob/main/public/PixPin_2024-04-05_22-35-07.gif')
 
 ## Props 属性说明
 

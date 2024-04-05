@@ -61,6 +61,7 @@
 ## 示例
 
 ```html
+import { SmsCode } from 'vue3-auth-code-input';
 <sms-code card title="温馨提示" content-text="请获取验证码后填写短信验证码。" mobile="159****8383" />
 ```
 

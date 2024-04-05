@@ -17,7 +17,7 @@
 
 ![card](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/image/sms-code-card.gif)
 
-![demo](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/PixPin_2024-04-05_22-35-07.gif)
+![demo](https://raw.githubusercontent.com/DMaiGit/vue3-verification-code-input/main/public/demo.gif)
 
 ## Props 属性说明
 

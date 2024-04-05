@@ -16,9 +16,9 @@
     "code",
     "input",
     "vue3-input",
-    "vue3-verification",
+    "vue3-auth",
     "vue3-code",
-    "vue3-input-verification",
+    "vue3-input-auth",
     "vue3-input-code"
   ],
   "homepage": "https://github.com/DMaiGit/vue3-auth-code-input",

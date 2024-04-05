@@ -1,6 +1,6 @@
 {
   "name": "vue3-auth-code-input",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -23,7 +23,7 @@
   ],
   "homepage": "https://github.com/DMaiGit/vue3-auth-code-input",
   "repository": {
-    "url": "https://github.com/DMaiGit/vue3-auth-code-input.git",
+    "url": "git+https://github.com/DMaiGit/vue3-auth-code-input.git",
     "type": "git"
   },
   "author": "Maiz <scxiaoxu0909@163.com>",

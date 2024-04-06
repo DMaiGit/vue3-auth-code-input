@@ -1,3 +1,9 @@
+import { ComponentPublicInstance } from 'vue';
+
+export interface ISmsCodeComponentInstance extends ComponentPublicInstance {
+  resetSendButton: (newCountDown?: number) => void;
+}
+
 export type CodeProp = string | number;
 export type LengthProp = number;
 

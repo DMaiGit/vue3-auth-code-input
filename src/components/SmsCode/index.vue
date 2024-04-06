@@ -185,6 +185,19 @@ const resetCountdown = () => {
   isCounting.value = false;
 };
 
+const resetSendButton = (newCountDown?: number) => {
+  if (newCountDown !== undefined) {
+    sendCountDown.value = newCountDown;
+  }
+  resetCountdown(); // 调用已有的重置倒计时方法
+  isCounting.value = false; // 重置倒计时状态，允许用户再次点击发送按钮
+};
+
+// 可能需要暴露这个方法给父组件
+defineExpose({
+  resetSendButton
+});
+
 /** 手机号脱敏 */
 const sensitiveMobile = computed(() => {
   if (mobile.value.length === 11) {

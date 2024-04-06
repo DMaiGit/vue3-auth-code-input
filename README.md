@@ -1,8 +1,21 @@
 # vue3-auth-code-input
 
-[![npm](https://img.shields.io/npm/v/vue3-auth-code-input.svg)](https://www.npmjs.com/package/vue3-auth-code-input)
-
 这是一个基于 Vue 3 和 TypeScript 开发的验证码输入组件，适用于需要用户输入验证码的场景。它提供了灵活的配置选项，以适应不同的需求。
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/vue3-auth-code-input">
+    <img src="https://img.shields.io/npm/v/vue3-auth-code-input.svg" alt="npm">
+  </a>
+  <a href="https://www.typescriptlang.org/">
+    <img src="https://img.shields.io/badge/TypeScript-5.2.2-blue.svg" alt="TS">
+  </a>
+  <a href="https://vuejs.org/">
+    <img src="https://img.shields.io/badge/Vue-3.2.37-brightgreen.svg" alt="VUE3">
+  </a>
+  <a href="https://vitejs.dev/">
+    <img src="https://img.shields.io/badge/Vite-5.2.0-brightgreen.svg" alt="VITE">
+  </a>
+</p>
 
 ## 功能特点
 
@@ -20,6 +33,12 @@
 ![card](https://raw.githubusercontent.com/DMaiGit/vue3-auth-code-input/main/public/image/sms-code-card.gif)
 
 ![demo](https://raw.githubusercontent.com/DMaiGit/vue3-auth-code-input/main/public/image/demo.gif)
+
+## Get Start
+
+```bash
+npm install vue3-auth-code-input
+```
 
 ## Props 属性说明
 
@@ -45,28 +64,48 @@
 | sendCountDown      | number           | 120      | 发送验证码的倒计时                     |
 | mobile             | string           | -      | 手机号，用于发送验证码，有值时显示传入手机号和按钮                 |
 
-## 插槽
+## slot
 
-- `header`: 自定义组件头部区域。
-- `content-text`: 自定义内容文本区域。
-- `send`: 自定义发送验证码按钮区域。
+以下是组件提供的插槽及其描述：
 
-## 事件
+| Name          | Description              |
+| ------------- | ------------------------ |
+| `header`      | 自定义组件头部区域。       |
+| `content-text`| 自定义内容文本区域。       |
+| `send`        | 自定义发送验证码按钮区域。 |
+
+## event
 
 | 事件名             | 描述                                   | type                                   |
 | ------------------ | -------------------------------------- | -------------------------------------- |
 | `update:code`       | 当验证码输入更新时触发，返回最新的验证码值。 | `(code: string \| number) => void` |
 | `send`            | 点击发送验证码按钮时触发，返回手机号码。 | `(mobile: string) => void` |
 
-## 示例
+## Ref 方法
 
-```html
+当需要从父组件调用子组件的方法时，请使用 `ref` 引用。以下是可用的 `ref` 方法：
+
+| 方法名             | 描述                                   | 参数                              |
+| ------------------ | -------------------------------------- | ---------------------------------- |
+| `resetSendButton` | 重置发送验证码按钮和倒计时，使其可以再次点击。 | `newCountDown?: number` (可选)      |
+
+## Example 示例
+
+```vue
+<template>
+  <div>
+    <sms-code ref="smsCodeRef" card title="温馨提示" content-text="请获取验证码后填写短信验证码。" mobile="159****8383" />
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
 import { SmsCode } from 'vue3-auth-code-input';
-<sms-code card title="温馨提示" content-text="请获取验证码后填写短信验证码。" mobile="159****8383" />
-```
 
-## 安装使用
+const smsCodeRef = ref(null);
 
-```bash
-npm install vue3-auth-code-input
+const resetTheButton = () => {
+  smsCodeRef.value.resetSendButton(60); // 60秒的新倒计时时间
+};
+</script>
 ```

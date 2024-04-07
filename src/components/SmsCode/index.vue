@@ -40,7 +40,9 @@ const localHeight = computed(() => typeof height.value === 'number' ? `${height.
 const localFontSize = computed(() => typeof fontSize.value === 'number' ? `${fontSize.value}px` : fontSize.value);
 const localCodeHeight = computed(() => typeof codeHeight.value === 'number' ? `${codeHeight.value}px` : codeHeight.value);
 const countdown = ref(sendCountDown.value); // 倒计时秒数
+const localSendCountDown = ref(sendCountDown.value);
 const isCounting = ref(false); // 是否正在倒计时
+const intervalId = ref<number | null>(null); // 倒计时定时器id
 
 // 初始化localCodeData
 const initializeLocalCode = () => {
@@ -168,29 +170,31 @@ const sendBtnOnClick = () => {
   }
   isCounting.value = true;
   emits('send', mobile.value);
+  countdown.value = localSendCountDown.value; // 使用本地倒计时开始
   /** 开始倒计时 */
-  const intervalId = setInterval(() => {
+  intervalId.value = setInterval(() => {
     countdown.value -= 1;
     if (countdown.value <= 0) {
-      clearInterval(intervalId);
+      clearInterval(intervalId.value as number);
       resetCountdown();
       isCounting.value = false; // 倒计时结束
     }
-  }, 1000);
+  }, 1000) as unknown as number;
 }
 
 // 重置倒计时
 const resetCountdown = () => {
-  countdown.value = sendCountDown.value;
+  countdown.value = localSendCountDown.value; // 使用本地倒计时重置
   isCounting.value = false;
 };
 
 const resetSendButton = (newCountDown?: number) => {
+  window.clearInterval(intervalId.value as number);
   if (newCountDown !== undefined) {
-    sendCountDown.value = newCountDown;
+    localSendCountDown.value = newCountDown; // 更新本地倒计时值
   }
-  resetCountdown(); // 调用已有的重置倒计时方法
-  isCounting.value = false; // 重置倒计时状态，允许用户再次点击发送按钮
+  resetCountdown(); // 重置倒计时
+  isCounting.value = false; // 重置倒计时状态
 };
 
 // 可能需要暴露这个方法给父组件

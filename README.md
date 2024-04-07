@@ -94,7 +94,7 @@ npm install vue3-auth-code-input
 ```vue
 <template>
   <div>
-    <sms-code :ref="smsCodeRef" card title="温馨提示" content-text="请获取验证码后填写短信验证码。" mobile="159****8383" />
+    <sms-code ref="smsCodeRef" card title="温馨提示" content-text="请获取验证码后填写短信验证码。" mobile="159****8383" />
   </div>
 </template>
 
@@ -105,7 +105,7 @@ import { SmsCode, type ISmsCodeComponentInstance  } from 'vue3-auth-code-input';
 const smsCodeRef = ref<ISmsCodeComponentInstance | null>(null);
 
 const resetTheButton = () => {
-  smsCodeRef.value?.resetSendButton(60); // 60秒的新倒计时时间
+  smsCodeRef.value!.resetSendButton(60); // 60秒的新倒计时时间
 };
 </script>
 ```
